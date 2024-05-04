@@ -1,0 +1,64 @@
+From 61006bb196f13030cd30abdf60040c9e4fdf37f1 Mon Sep 17 00:00:00 2001
+From: playegggo <playegggo@qq.com>
+Date: Thu, 2 May 2024 03:45:29 +0800
+Subject: [PATCH] Update core.c
+
+add uart2
+---
+ arch/arm/mach-hi3518/core.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/arch/arm/mach-hi3518/core.c b/arch/arm/mach-hi3518/core.c
+index ee31515734..0aa5dd9b2b 100644
+--- a/arch/arm/mach-hi3518/core.c
++++ b/arch/arm/mach-hi3518/core.c
+@@ -419,6 +419,8 @@ static struct pl061_platform_data gpio11_plat_data = {
+ 
+ HIL_AMBA_DEVICE(uart0,  "uart:0",     UART0,  NULL);
+ HIL_AMBA_DEVICE(uart1,  "uart:1",     UART1,  NULL);
++HIL_AMBA_DEVICE(uart2,  "uart:2",     UART2,  NULL);
++
+ #if defined(CONFIG_ARM_SP805_WATCHDOG) || defined(CONFIG_ARM_SP805_WATCHDOG_MODULE)
+ HIL_AMBA_DEVICE(wdog,   "dev:wdog",   WDG,    NULL);
+ #endif
+@@ -440,6 +442,7 @@ HIL_AMBA_DEVICE(gpio11, "dev:gpio11", GPIO11, &gpio11_plat_data);
+ static struct amba_device *amba_devs[] __initdata = {
+ 	&HIL_AMBADEV_NAME(uart0),
+ 	&HIL_AMBADEV_NAME(uart1),
++	&HIL_AMBADEV_NAME(uart2),
+ #if defined(CONFIG_ARM_SP805_WATCHDOG) || defined(CONFIG_ARM_SP805_WATCHDOG_MODULE)
+ 	&HIL_AMBADEV_NAME(wdog),
+ #endif
+@@ -487,6 +490,10 @@ static struct clk_lookup lookups[] = {
+ 		.dev_id         = "uart:1",
+ 		.clk            = &uart_clk,
+ 	},
++	{       /* UART2 */
++		.dev_id         = "uart:2",
++		.clk            = &uart_clk,
++	},
+ #if defined(CONFIG_ARM_SP805_WATCHDOG) || defined(CONFIG_ARM_SP805_WATCHDOG_MODULE)
+ 	{	/* WDOG */
+ 		.dev_id		= "dev:wdog",
+From 013decc281195abae6895326331f710255b109e2 Mon Sep 17 00:00:00 2001
+From: playegggo <playegggo@qq.com>
+Date: Thu, 2 May 2024 03:53:53 +0800
+Subject: [PATCH] Update irqs.h
+
+add uart2 for hi3518ev100
+---
+ arch/arm/mach-hi3518/include/mach/irqs.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/mach-hi3518/include/mach/irqs.h b/arch/arm/mach-hi3518/include/mach/irqs.h
+index 3d6a2f2000..b43514a81b 100644
+--- a/arch/arm/mach-hi3518/include/mach/irqs.h
++++ b/arch/arm/mach-hi3518/include/mach/irqs.h
+@@ -9,6 +9,7 @@
+ #define TIMER23_IRQ		(HI3518_IRQ_START + 4)
+ #define UART0_IRQ		(HI3518_IRQ_START + 5)
+ #define UART1_IRQ		(HI3518_IRQ_START + 5)
++#define UART2_IRQ		(HI3518_IRQ_START + 25)
+ #define DMAC_IRQ		(HI3518_IRQ_START + 14)
+ #define UART2_IRQ		(HI3518_IRQ_START + 25)
+ #define GPIO0_IRQ		(HI3518_IRQ_START + 29)   
