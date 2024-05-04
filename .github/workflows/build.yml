@@ -16,7 +16,7 @@ env:
 jobs:
   buildroot:
     name: Firmware
-    runs-on: [ubuntu-latest,self-hosted]
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
