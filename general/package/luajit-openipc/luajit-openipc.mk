@@ -5,7 +5,7 @@
 ################################################################################
 
 LUAJIT_OPENIPC_VERSION = 880ca300e8fb7b432b9d25ed377db2102e4cb63d
-LUAJIT_OPENIPC_SITE = $(call github,LuaJIT,LuaJIT,$(LUAJIT_VERSION))
+LUAJIT_OPENIPC_SITE = $(call github,LuaJIT,LuaJIT,$(LUAJIT_OPENIPC_VERSION))
 LUAJIT_OPENIPC_LICENSE = MIT
 LUAJIT_OPENIPC_LICENSE_FILES = COPYRIGHT
 LUAJIT_OPENIPC_CPE_ID_VENDOR = luajit
