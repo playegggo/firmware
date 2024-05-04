@@ -2,10 +2,10 @@ name: build
 on:
   pull_request:
     branches:
-      - master
+      - hi3516cv100
   push:
     branches:
-      - master
+      - hi3516cv100
   schedule:
     - cron: '0 1 * * *'
   workflow_dispatch:
