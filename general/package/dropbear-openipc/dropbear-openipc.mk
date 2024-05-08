@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-DROPBEAR_OPENIPC_VERSION = 2022.82
+DROPBEAR_OPENIPC_VERSION = 2024.85
 DROPBEAR_OPENIPC_SITE = http://sources.buildroot.net/dropbear
 DROPBEAR_OPENIPC_SOURCE = dropbear-$(DROPBEAR_OPENIPC_VERSION).tar.bz2
 

@@ -178,8 +178,8 @@ sys_config() {
 	#UART2
 	devmem 0x200A0030 32 0x0
 	#UART2
-	devmem 0x200f0108 32 0x0
-	devmem 0x200f010c 32 0x0
+	devmem 0x200f0108 32 0x1
+	devmem 0x200f010c 32 0x1
 	#SPI0 SPI1
 	devmem 0x200C0004 32 0x7F00
 	devmem 0x200E0004 32 0x7F00
@@ -292,7 +292,7 @@ sys_config() {
 		devmem 0x20050038 32 0x3 #DDR0 VICAP VDP
 	}
 	i2c_type_select
-	#net_rmii_mode
+	net_rmii_mode
 	#net_mii_mode
 	clk_cfg
 }
