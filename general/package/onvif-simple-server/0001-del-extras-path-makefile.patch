@@ -17,7 +17,7 @@ index 460d44e..4e214b5 100644
 -LIBS_O = -Wl,--gc-sections extras/libtomcrypt/libtomcrypt.a -lpthread -lrt
 -LIBS_N = -Wl,--gc-sections extras/libtomcrypt/libtomcrypt.a -lpthread -lrt
 +INCLUDE = -Ilibtomcrypt/src/headers -ffunction-sections -fdata-sections -lrt
-+LIBS_O = -Wl,--gc-sections libtomcrypt/libtomcrypt.a -lpthread -lrt
-+LIBS_N = -Wl,--gc-sections libtomcrypt/libtomcrypt.a -lpthread -lrt
++LIBS_O = -Wl,--gc-sections ../libtomcrypt/libtomcrypt.a -lpthread -lrt
++LIBS_N = -Wl,--gc-sections ../libtomcrypt/libtomcrypt.a -lpthread -lrt
  endif
  LIBS_W = -Wl,--gc-sections
