@@ -10,8 +10,8 @@ index 460d44e..4e214b5 100644
 -LIBS_O = -Wl,--gc-sections extras/mbedtls/library/libmbedcrypto.a -lpthread -lrt
 -LIBS_N = -Wl,--gc-sections extras/mbedtls/library/libmbedcrypto.a -lpthread -lrt
 +INCLUDE = -DHAVE_MBEDTLS -I$(STAGING_DIR)/usr/include -ffunction-sections -fdata-sections -lrt
-+LIBS_O = -Wl,--gc-sections mbedtls/library/libmbedcrypto.a -lpthread -lrt
-+LIBS_N = -Wl,--gc-sections mbedtls/library/libmbedcrypto.a -lpthread -lrt
++LIBS_O = -Wl,--gc-sections $(STAGING_DIR)/usr/lib/libmbedcrypto.a -lpthread -lrt
++LIBS_N = -Wl,--gc-sections $(STAGING_DIR)/usr/lib/libmbedcrypto.a -lpthread -lrt
  else
 -INCLUDE = -Iextras/libtomcrypt/src/headers -ffunction-sections -fdata-sections -lrt
 -LIBS_O = -Wl,--gc-sections extras/libtomcrypt/libtomcrypt.a -lpthread -lrt

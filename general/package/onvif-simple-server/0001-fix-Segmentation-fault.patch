@@ -1,0 +1,23 @@
+diff --git a/onvif_simple_server.c b/onvif_simple_server.c
+index 1a5aacd..395f235 100644
+--- a/onvif_simple_server.c
++++ b/onvif_simple_server.c
+@@ -300,13 +300,16 @@ int main(int argc, char ** argv)
+         exit(EXIT_FAILURE);
+     }
+     input_size = fread(input, 1, 16 * 1024 * sizeof(char), stdin);
+-    if (realloc(input, input_size * sizeof(char)) == NULL) {
++    char *temp = realloc(input, input_size);
++    if (temp == NULL)
++    {
+         log_fatal("Memory error");
+         free(input);
+         fclose(fLog);
+         free(conf_file);
+         exit(EXIT_FAILURE);
+     }
++    input = temp;
+     log_debug("Input:\n%s", input);
+     log_debug("Url: %s", prog_name);
+ 
+

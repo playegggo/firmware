@@ -1,5 +1,4 @@
 From 61006bb196f13030cd30abdf60040c9e4fdf37f1 Mon Sep 17 00:00:00 2001
-From: playegggo <playegggo@qq.com>
 Date: Thu, 2 May 2024 03:45:29 +0800
 Subject: [PATCH] Update core.c
 
@@ -41,7 +40,6 @@ index ee31515734..0aa5dd9b2b 100644
  	{	/* WDOG */
  		.dev_id		= "dev:wdog",
 From 013decc281195abae6895326331f710255b109e2 Mon Sep 17 00:00:00 2001
-From: playegggo <playegggo@qq.com>
 Date: Thu, 2 May 2024 03:53:53 +0800
 Subject: [PATCH] Update irqs.h
 
